@@ -1,102 +1,77 @@
-# 🚓 Police Data Analysis Using Python
+# 🚓 Police Data Analysis using Python
 
 ## 📌 Project Overview
-This project performs exploratory data analysis (EDA) on a Police Traffic Stop dataset using Python and Pandas.  
-The analysis focuses on violations, driver demographics, searches conducted during stops, and stop durations.
+This project focuses on analyzing a real-world police traffic stop dataset using Python and Pandas. The dataset contains information related to driver demographics, traffic violations, searches conducted, and stop durations.
+
+The main objective is to explore, clean, and analyze the dataset to extract meaningful insights.
 
 ---
 
-# 🛠️ Technologies Used
-- Python
-- Pandas
-- Google Colab / Jupyter Notebook
+## 🎯 Objectives
+- Understand the structure of police traffic stop data
+- Perform data cleaning and preprocessing
+- Analyze violations and driver demographics
+- Answer real-world analytical questions
+- Apply filtering, grouping, and aggregation techniques
 
 ---
 
-# 📂 Dataset
-The dataset contains information related to police traffic stops such as:
+## 📂 Dataset
+The dataset contains police traffic stop records with the following features:
+
 - Driver Gender
 - Driver Age
 - Violation Type
 - Search Conducted
 - Stop Duration
+- Stop Outcome
+- Driver Race
 
 ---
 
-# 📊 Questions Solved in This Project
-
-## 1️⃣ Remove Columns That Contain Only Null Values
-Used Pandas functions to identify null values and remove unnecessary columns.
-
-```python
-data.isnull().sum()
-data.drop(columns='country_name', inplace=True)
-```
+## 🛠️ Technologies Used
+- Python
+- Pandas
+- NumPy
+- Google Colab
 
 ---
 
-## 2️⃣ For Speeding, Were Men or Women Stopped More Often?
-Filtered the dataset for speeding violations and counted gender occurrences.
+## 🔍 Key Operations Performed
 
-```python
-data[data['violation'] == 'Speeding']['driver_gender'].value_counts()
-```
+### ✔️ Data Exploration
+- Display dataset information
+- Check data types
+- Identify missing values
 
-### ✅ Result
-Men were stopped more often for speeding violations.
+### ✔️ Data Cleaning
+- Remove unnecessary columns
+- Handle missing/null values
+- Convert categorical data where required
 
----
+### ✔️ Data Analysis
+- Analyze speeding violations by gender
+- Examine search rates during traffic stops
+- Calculate average stop duration
+- Compare driver age distribution for different violations
 
-## 3️⃣ Does Gender Affect Who Gets Searched During a Stop?
-Used `groupby()` to analyze searches conducted based on gender.
-
-```python
-data.groupby('driver_gender').search_conducted.sum()
-```
-
----
-
-## 4️⃣ What is the Mean Stop Duration?
-Converted categorical stop durations into numerical values and calculated the mean.
-
-```python
-data['stp_duration'] = data['stop_duration'].map({
-    '0-15 Min': 7.5,
-    '16-30 Min': 24,
-    '30+ Min': 45
-})
-
-data['stp_duration'].mean()
-```
+### ✔️ Sample Queries Solved
+- Were men or women stopped more often for speeding?
+- Does gender affect who gets searched during a stop?
+- What is the average stop duration?
+- What is the age distribution for each violation type?
 
 ---
 
-## 5️⃣ Compare the Age Distribution for Each Violation
-Used descriptive statistics to compare driver age distributions.
-
-```python
-data.groupby('violation').driver_age.describe()
-```
-
----
-
-
-# 📈 Key Insights
-- Male drivers were stopped more frequently for speeding.
-- Search rates vary based on driver gender.
-- Stop duration can be analyzed numerically after transformation.
-- Different violations show different age distribution patterns.
+## 📈 Key Insights
+- Male drivers were stopped more frequently for speeding violations
+- Search rates varied based on gender
+- Stop duration analysis became easier after transforming categorical values
+- Different violations showed different driver age patterns
 
 ---
 
-# ▶️ How to Run the Project
-1. Open the notebook in Google Colab or Jupyter Notebook.
-2. Upload the dataset.
-3. Run all cells step by step.
-
----
-
-# 📁 Project Structure
+## 📁 Project Structure
 
 ```text
 Police-Data-Analysis/
@@ -109,12 +84,5 @@ Police-Data-Analysis/
 
 ---
 
-# 🌟 Future Improvements
-- Add visualizations using Matplotlib and Seaborn
-- Build an interactive dashboard
-- Perform advanced statistical analysis
-
----
-
-# 👩‍💻 Author
-P. Pavithra Lakshmi
+## 👩‍💻 Author
+### P. Pavithra Lakshmi
