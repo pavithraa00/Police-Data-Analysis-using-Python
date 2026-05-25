@@ -78,8 +78,7 @@ Police-Data-Analysis/
 │
 ├── PoliceAnalysis.ipynb
 ├── Police Data.csv
-├── README.md
-└── images/
+├── README.md/
 ```
 
 ---
